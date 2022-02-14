@@ -6,14 +6,25 @@ const router = createRouter({
         {
     path: '/',
     name: 'Home',
-    component: () => import('../components/HelloWorld.vue')
+    component: () => import('../views/Home.vue')
   },
   {
-    path: '/post',
-    name: 'Post',
+    path: '/create',
+    name: 'Create',
     component: () => import('../components/post/Create.vue')
   },
-    ]
+  {
+    path: '/edit/:id',
+    name: 'Edit',
+    component: () => import('../components/post/Edit.vue')
+  },
+  {
+    path: '/post/:id',
+    name: 'Post',
+    component: () => import('../components/post/Post.vue')
+  },
+  
+  ]
 })
 
 router.beforeEach((to, from, next) => {
